@@ -1,95 +1,52 @@
+'use client';
+
 import Image from 'next/image'
 import styles from './page.module.css'
+import { Box, Container } from '@chakra-ui/react';
+import DataTable from '../components/DataTable';
 
-export default function Home() {
+const headers = [
+  'Timestamp',
+  'Purchase Id',
+  'Mail',
+  'Name',
+  'Source',
+  'Status',
+  'Select',
+];
+
+const rows = [
+  ['2023-07-01', '123', 'example1@mail.com', 'John Doe', 'Website', 'Completed', ''],
+  ['2023-07-02', '456', 'example2@mail.com', 'Jane Smith', 'App', 'Pending', ''],
+  ['2023-07-03', '789', 'example3@mail.com', 'Alice Johnson', 'Website', 'Completed', ''],
+  ['2023-07-04', '987', 'example4@mail.com', 'Bob Williams', 'App', 'Pending', ''],
+  ['2023-07-05', '654', 'example5@mail.com', 'Mike Johnson', 'Website', 'Completed', ''],
+  ['2023-07-06', '321', 'example6@mail.com', 'Sarah Brown', 'App', 'Pending', ''],
+  ['2023-07-07', '111', 'example7@mail.com', 'David Wilson', 'Website', 'Completed', ''],
+  ['2023-07-08', '222', 'example8@mail.com', 'Emily Davis', 'App', 'Pending', ''],
+  ['2023-07-09', '333', 'example9@mail.com', 'Olivia Taylor', 'Website', 'Completed', ''],
+  ['2023-07-10', '444', 'example10@mail.com', 'Jacob Moore', 'App', 'Pending', ''],
+  ['2023-07-11', '555', 'example11@mail.com', 'Liam Anderson', 'Website', 'Completed', ''],
+  ['2023-07-12', '666', 'example12@mail.com', 'Ava Garcia', 'App', 'Pending', ''],
+  ['2023-07-13', '777', 'example13@mail.com', 'Sophia Lee', 'Website', 'Completed', ''],
+  ['2023-07-14', '888', 'example14@mail.com', 'Mia Wilson', 'App', 'Pending', ''],
+  ['2023-07-15', '999', 'example15@mail.com', 'Noah Brown', 'Website', 'Completed', ''],
+  ['2023-07-16', '1010', 'example16@mail.com', 'James Davis', 'App', 'Pending', ''],
+  ['2023-07-17', '1112', 'example17@mail.com', 'Charlotte Moore', 'Website', 'Completed', ''],
+  ['2023-07-18', '1314', 'example18@mail.com', 'Elijah Taylor', 'App', 'Pending', ''],
+  ['2023-07-19', '1516', 'example19@mail.com', 'Scarlett Anderson', 'Website', 'Completed', ''],
+  ['2023-07-20', '1718', 'example20@mail.com', 'Henry Garcia', 'App', 'Pending', ''],
+];
+
+
+const Home: React.FC = () => {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <Container maxW="container.lg" mt={16}>
+      <Box boxShadow="base" p={4}>
+        <DataTable headers={headers} caption="Bookings" rows={rows} />
+      </Box>
+    </Container>
+  );
+};
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+export default Home;
