@@ -6,18 +6,18 @@ import { Box, Container } from '@chakra-ui/react';
 import DataTable from '../components/DataTable';
 
 const headers = [
-  'Timestamp',
-  'Purchase Id',
-  'Mail',
-  'Name',
-  'Source',
-  'Status',
-  'Select',
+  'timestamp',
+  'purchase Id',
+  'mail',
+  'name',
+  'source',
+  'status',
+  'select',
 ];
 
 type Booking = {
   timestamp: string;
-  purchaseId: string;
+  purchaseid: string;
   mail: string;
   name: string;
   source: string;
@@ -29,7 +29,7 @@ type Booking = {
 const rows: Booking[] = [
   {
     timestamp: '2023-07-01T12:00:00Z',
-    purchaseId: '123',
+    purchaseid: '123',
     mail: 'example1@mail.com',
     name: 'John Doe',
     source: 'Website',
@@ -38,7 +38,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-02T14:30:00Z',
-    purchaseId: '456',
+    purchaseid: '456',
     mail: 'example2@mail.com',
     name: 'Jane Smith',
     source: 'App',
@@ -47,7 +47,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-03T09:15:00Z',
-    purchaseId: '789',
+    purchaseid: '789',
     mail: 'example3@mail.com',
     name: 'Alice Johnson',
     source: 'Website',
@@ -56,7 +56,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-04T16:45:00Z',
-    purchaseId: '987',
+    purchaseid: '987',
     mail: 'example4@mail.com',
     name: 'Bob Williams',
     source: 'App',
@@ -65,7 +65,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-05T10:30:00Z',
-    purchaseId: '654',
+    purchaseid: '654',
     mail: 'example5@mail.com',
     name: 'Mike Johnson',
     source: 'Website',
@@ -74,7 +74,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-06T13:20:00Z',
-    purchaseId: '321',
+    purchaseid: '321',
     mail: 'example6@mail.com',
     name: 'Sarah Brown',
     source: 'App',
@@ -83,7 +83,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-07T11:10:00Z',
-    purchaseId: '111',
+    purchaseid: '111',
     mail: 'example7@mail.com',
     name: 'David Wilson',
     source: 'Website',
@@ -92,7 +92,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-08T15:40:00Z',
-    purchaseId: '222',
+    purchaseid: '222',
     mail: 'example8@mail.com',
     name: 'Emily Davis',
     source: 'App',
@@ -101,7 +101,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-09T10:50:00Z',
-    purchaseId: '333',
+    purchaseid: '333',
     mail: 'example9@mail.com',
     name: 'Olivia Taylor',
     source: 'Website',
@@ -110,7 +110,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-10T14:00:00Z',
-    purchaseId: '444',
+    purchaseid: '444',
     mail: 'example10@mail.com',
     name: 'Jacob Moore',
     source: 'App',
@@ -119,7 +119,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-11T09:45:00Z',
-    purchaseId: '555',
+    purchaseid: '555',
     mail: 'example11@mail.com',
     name: 'Liam Anderson',
     source: 'Website',
@@ -128,7 +128,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-12T13:15:00Z',
-    purchaseId: '666',
+    purchaseid: '666',
     mail: 'example12@mail.com',
     name: 'Ava Garcia',
     source: 'App',
@@ -137,7 +137,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-13T11:30:00Z',
-    purchaseId: '777',
+    purchaseid: '777',
     mail: 'example13@mail.com',
     name: 'Sophia Lee',
     source: 'Website',
@@ -146,7 +146,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-14T16:00:00Z',
-    purchaseId: '888',
+    purchaseid: '888',
     mail: 'example14@mail.com',
     name: 'Mia Wilson',
     source: 'App',
@@ -155,7 +155,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-15T12:45:00Z',
-    purchaseId: '999',
+    purchaseid: '999',
     mail: 'example15@mail.com',
     name: 'Noah Brown',
     source: 'Website',
@@ -164,7 +164,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-16T14:50:00Z',
-    purchaseId: '1010',
+    purchaseid: '1010',
     mail: 'example16@mail.com',
     name: 'James Davis',
     source: 'App',
@@ -173,7 +173,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-17T13:25:00Z',
-    purchaseId: '1112',
+    purchaseid: '1112',
     mail: 'example17@mail.com',
     name: 'Charlotte Moore',
     source: 'Website',
@@ -182,7 +182,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-18T11:55:00Z',
-    purchaseId: '1314',
+    purchaseid: '1314',
     mail: 'example18@mail.com',
     name: 'Elijah Taylor',
     source: 'App',
@@ -191,7 +191,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-19T15:35:00Z',
-    purchaseId: '1516',
+    purchaseid: '1516',
     mail: 'example19@mail.com',
     name: 'Scarlett Anderson',
     source: 'Website',
@@ -200,7 +200,7 @@ const rows: Booking[] = [
   },
   {
     timestamp: '2023-07-20T12:15:00Z',
-    purchaseId: '1718',
+    purchaseid: '1718',
     mail: 'example20@mail.com',
     name: 'Henry Garcia',
     source: 'App',
@@ -215,7 +215,7 @@ const Home: React.FC = () => {
   return (
     <Container maxW="container.lg" mt={4}>
       <Box boxShadow="base" p={4}>
-        <DataTable headers={headers} caption="Bookings" rows={rows} />
+        <DataTable headers={headers} caption="Bookings" rows={rows} sortable  />
       </Box>
     </Container>
   );
