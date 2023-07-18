@@ -15,33 +15,205 @@ const headers = [
   'Select',
 ];
 
-const rows = [
-  ['2023-07-01', '123', 'example1@mail.com', 'John Doe', 'Website', 'Completed', ''],
-  ['2023-07-02', '456', 'example2@mail.com', 'Jane Smith', 'App', 'Pending', ''],
-  ['2023-07-03', '789', 'example3@mail.com', 'Alice Johnson', 'Website', 'Completed', ''],
-  ['2023-07-04', '987', 'example4@mail.com', 'Bob Williams', 'App', 'Pending', ''],
-  ['2023-07-05', '654', 'example5@mail.com', 'Mike Johnson', 'Website', 'Completed', ''],
-  ['2023-07-06', '321', 'example6@mail.com', 'Sarah Brown', 'App', 'Pending', ''],
-  ['2023-07-07', '111', 'example7@mail.com', 'David Wilson', 'Website', 'Completed', ''],
-  ['2023-07-08', '222', 'example8@mail.com', 'Emily Davis', 'App', 'Pending', ''],
-  ['2023-07-09', '333', 'example9@mail.com', 'Olivia Taylor', 'Website', 'Completed', ''],
-  ['2023-07-10', '444', 'example10@mail.com', 'Jacob Moore', 'App', 'Pending', ''],
-  ['2023-07-11', '555', 'example11@mail.com', 'Liam Anderson', 'Website', 'Completed', ''],
-  ['2023-07-12', '666', 'example12@mail.com', 'Ava Garcia', 'App', 'Pending', ''],
-  ['2023-07-13', '777', 'example13@mail.com', 'Sophia Lee', 'Website', 'Completed', ''],
-  ['2023-07-14', '888', 'example14@mail.com', 'Mia Wilson', 'App', 'Pending', ''],
-  ['2023-07-15', '999', 'example15@mail.com', 'Noah Brown', 'Website', 'Completed', ''],
-  ['2023-07-16', '1010', 'example16@mail.com', 'James Davis', 'App', 'Pending', ''],
-  ['2023-07-17', '1112', 'example17@mail.com', 'Charlotte Moore', 'Website', 'Completed', ''],
-  ['2023-07-18', '1314', 'example18@mail.com', 'Elijah Taylor', 'App', 'Pending', ''],
-  ['2023-07-19', '1516', 'example19@mail.com', 'Scarlett Anderson', 'Website', 'Completed', ''],
-  ['2023-07-20', '1718', 'example20@mail.com', 'Henry Garcia', 'App', 'Pending', ''],
+type Booking = {
+  timestamp: string;
+  purchaseId: string;
+  mail: string;
+  name: string;
+  source: string;
+  status: string;
+  select: string;
+};
+
+
+const rows: Booking[] = [
+  {
+    timestamp: '2023-07-01T12:00:00Z',
+    purchaseId: '123',
+    mail: 'example1@mail.com',
+    name: 'John Doe',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-02T14:30:00Z',
+    purchaseId: '456',
+    mail: 'example2@mail.com',
+    name: 'Jane Smith',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-03T09:15:00Z',
+    purchaseId: '789',
+    mail: 'example3@mail.com',
+    name: 'Alice Johnson',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-04T16:45:00Z',
+    purchaseId: '987',
+    mail: 'example4@mail.com',
+    name: 'Bob Williams',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-05T10:30:00Z',
+    purchaseId: '654',
+    mail: 'example5@mail.com',
+    name: 'Mike Johnson',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-06T13:20:00Z',
+    purchaseId: '321',
+    mail: 'example6@mail.com',
+    name: 'Sarah Brown',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-07T11:10:00Z',
+    purchaseId: '111',
+    mail: 'example7@mail.com',
+    name: 'David Wilson',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-08T15:40:00Z',
+    purchaseId: '222',
+    mail: 'example8@mail.com',
+    name: 'Emily Davis',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-09T10:50:00Z',
+    purchaseId: '333',
+    mail: 'example9@mail.com',
+    name: 'Olivia Taylor',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-10T14:00:00Z',
+    purchaseId: '444',
+    mail: 'example10@mail.com',
+    name: 'Jacob Moore',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-11T09:45:00Z',
+    purchaseId: '555',
+    mail: 'example11@mail.com',
+    name: 'Liam Anderson',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-12T13:15:00Z',
+    purchaseId: '666',
+    mail: 'example12@mail.com',
+    name: 'Ava Garcia',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-13T11:30:00Z',
+    purchaseId: '777',
+    mail: 'example13@mail.com',
+    name: 'Sophia Lee',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-14T16:00:00Z',
+    purchaseId: '888',
+    mail: 'example14@mail.com',
+    name: 'Mia Wilson',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-15T12:45:00Z',
+    purchaseId: '999',
+    mail: 'example15@mail.com',
+    name: 'Noah Brown',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-16T14:50:00Z',
+    purchaseId: '1010',
+    mail: 'example16@mail.com',
+    name: 'James Davis',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-17T13:25:00Z',
+    purchaseId: '1112',
+    mail: 'example17@mail.com',
+    name: 'Charlotte Moore',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-18T11:55:00Z',
+    purchaseId: '1314',
+    mail: 'example18@mail.com',
+    name: 'Elijah Taylor',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-19T15:35:00Z',
+    purchaseId: '1516',
+    mail: 'example19@mail.com',
+    name: 'Scarlett Anderson',
+    source: 'Website',
+    status: 'Completed',
+    select: '',
+  },
+  {
+    timestamp: '2023-07-20T12:15:00Z',
+    purchaseId: '1718',
+    mail: 'example20@mail.com',
+    name: 'Henry Garcia',
+    source: 'App',
+    status: 'Pending',
+    select: '',
+  },
 ];
+
 
 
 const Home: React.FC = () => {
   return (
-    <Container maxW="container.lg" mt={16}>
+    <Container maxW="container.lg" mt={4}>
       <Box boxShadow="base" p={4}>
         <DataTable headers={headers} caption="Bookings" rows={rows} />
       </Box>
