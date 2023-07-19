@@ -22,7 +22,7 @@ const headers = [
 const Home: React.FC = () => {
   return (
     <Container maxW="container.xl" mt={4}>
-      <Heading as='h1' size='2xl' align='center' my="4">Tyrp Table</Heading>
+      <Heading as='h1' size='2xl' my="4">Tyrp Table</Heading>
       <Box boxShadow="base" p={4}>
         <DataTable headers={headers} caption="Bookings" rows={rows} sortable  />    
       </Box>
