@@ -33,7 +33,7 @@ const rows: Booking[] = [
     mail: 'example1@mail.com',
     name: 'John Doe',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -41,8 +41,8 @@ const rows: Booking[] = [
     purchaseid: '456',
     mail: 'example2@mail.com',
     name: 'Jane Smith',
-    source: 'App',
-    status: 'Pending',
+    source: 'Website',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -51,7 +51,7 @@ const rows: Booking[] = [
     mail: 'example3@mail.com',
     name: 'Alice Johnson',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -59,8 +59,8 @@ const rows: Booking[] = [
     purchaseid: '987',
     mail: 'example4@mail.com',
     name: 'Bob Williams',
-    source: 'App',
-    status: 'Pending',
+    source: 'Website',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -69,7 +69,7 @@ const rows: Booking[] = [
     mail: 'example5@mail.com',
     name: 'Mike Johnson',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -77,8 +77,8 @@ const rows: Booking[] = [
     purchaseid: '321',
     mail: 'example6@mail.com',
     name: 'Sarah Brown',
-    source: 'App',
-    status: 'Pending',
+    source: 'Website',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -87,7 +87,7 @@ const rows: Booking[] = [
     mail: 'example7@mail.com',
     name: 'David Wilson',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -96,7 +96,7 @@ const rows: Booking[] = [
     mail: 'example8@mail.com',
     name: 'Emily Davis',
     source: 'App',
-    status: 'Pending',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -105,7 +105,7 @@ const rows: Booking[] = [
     mail: 'example9@mail.com',
     name: 'Olivia Taylor',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -114,7 +114,7 @@ const rows: Booking[] = [
     mail: 'example10@mail.com',
     name: 'Jacob Moore',
     source: 'App',
-    status: 'Pending',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -123,7 +123,7 @@ const rows: Booking[] = [
     mail: 'example11@mail.com',
     name: 'Liam Anderson',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -132,7 +132,7 @@ const rows: Booking[] = [
     mail: 'example12@mail.com',
     name: 'Ava Garcia',
     source: 'App',
-    status: 'Pending',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -141,7 +141,7 @@ const rows: Booking[] = [
     mail: 'example13@mail.com',
     name: 'Sophia Lee',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -150,7 +150,7 @@ const rows: Booking[] = [
     mail: 'example14@mail.com',
     name: 'Mia Wilson',
     source: 'App',
-    status: 'Pending',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -159,7 +159,7 @@ const rows: Booking[] = [
     mail: 'example15@mail.com',
     name: 'Noah Brown',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -168,7 +168,7 @@ const rows: Booking[] = [
     mail: 'example16@mail.com',
     name: 'James Davis',
     source: 'App',
-    status: 'Pending',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -177,7 +177,7 @@ const rows: Booking[] = [
     mail: 'example17@mail.com',
     name: 'Charlotte Moore',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -186,7 +186,7 @@ const rows: Booking[] = [
     mail: 'example18@mail.com',
     name: 'Elijah Taylor',
     source: 'App',
-    status: 'Pending',
+    status: 'Waiting',
     select: '',
   },
   {
@@ -195,7 +195,7 @@ const rows: Booking[] = [
     mail: 'example19@mail.com',
     name: 'Scarlett Anderson',
     source: 'Website',
-    status: 'Completed',
+    status: 'Paid',
     select: '',
   },
   {
@@ -204,7 +204,7 @@ const rows: Booking[] = [
     mail: 'example20@mail.com',
     name: 'Henry Garcia',
     source: 'App',
-    status: 'Pending',
+    status: 'Waiting',
     select: '',
   },
 ];
@@ -215,7 +215,7 @@ const Home: React.FC = () => {
   return (
     <Container maxW="container.lg" mt={4}>
       <Box boxShadow="base" p={4}>
-        <DataTable headers={headers} caption="Bookings" rows={rows} sortable  />
+        <DataTable headers={headers} caption="Bookings" rows={rows} sortable  />    
       </Box>
     </Container>
   );
