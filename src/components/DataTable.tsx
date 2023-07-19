@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Table, Thead, Tbody, Tr, Th, Td, Tag, Input, Button } from "@chakra-ui/react";
+import { Table, Thead, Tbody, Tr, Th, Td, Tag, Input, Button, Box } from "@chakra-ui/react";
 import Pagination from "./Pagination";
 import moment from "moment";
 import { Booking, DataTableProps } from "../../public/interfaces";
@@ -91,7 +91,8 @@ const DataTable: React.FC<DataTableProps> = ({
         onChange={handleSearch}
         marginBottom="1rem"
       />
-      <Table size="md">
+      <Box  overflowX="auto">
+      <Table variant='simple' minWidth="100%" >
         {caption && <caption>{caption}</caption>}
         <Thead>
           <Tr>
@@ -137,6 +138,7 @@ const DataTable: React.FC<DataTableProps> = ({
               <Td> <Button
                   colorScheme={selectedRows.includes(row.purchaseid) ? 'green' : 'gray'}
                   onClick={() => handleRowSelect(row.purchaseid)}
+                  minWidth={32}
                 >
                   {selectedRows.includes(row.purchaseid) ? 'Selected' : 'Select'}
                 </Button></Td>
@@ -144,6 +146,7 @@ const DataTable: React.FC<DataTableProps> = ({
           ))}
         </Tbody>
       </Table>
+      </Box>
       <Pagination
         totalCount={totalCount}
         pageSize={pageSize}
