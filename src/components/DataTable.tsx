@@ -97,7 +97,7 @@ const DataTable: React.FC<DataTableProps> = ({
       setDisplayList(filteredRows);
       setTotalCount(filteredRows.length);
     }
-  }, [searchQuery, currentList, filteredRows]);
+  }, [searchQuery, currentList, filteredRows, rows.length]);
 
   return (
     <div>
