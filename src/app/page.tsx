@@ -2,9 +2,9 @@
 
 import Image from 'next/image'
 import styles from './page.module.css'
-import { Box, Container } from '@chakra-ui/react';
+import { Box, Container, Heading } from '@chakra-ui/react';
 import DataTable from '../components/DataTable';
-import { rows } from '../../public/tableContent';
+import { rows } from '../Utils/tableContent';
 
 const headers = [
   'timestamp',
@@ -22,6 +22,7 @@ const headers = [
 const Home: React.FC = () => {
   return (
     <Container maxW="container.xl" mt={4}>
+      <Heading as='h1' size='2xl' align='center' my="4">Tyrp Table</Heading>
       <Box boxShadow="base" p={4}>
         <DataTable headers={headers} caption="Bookings" rows={rows} sortable  />    
       </Box>

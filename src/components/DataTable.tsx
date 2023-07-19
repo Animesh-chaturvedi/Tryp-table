@@ -1,8 +1,19 @@
 import { useEffect, useState } from "react";
-import { Table, Thead, Tbody, Tr, Th, Td, Tag, Input, Button, Box } from "@chakra-ui/react";
+import {
+  Table,
+  Thead,
+  Tbody,
+  Tr,
+  Th,
+  Td,
+  Tag,
+  Input,
+  Button,
+  Box,
+} from "@chakra-ui/react";
 import Pagination from "./Pagination";
 import moment from "moment";
-import { Booking, DataTableProps } from "../../public/interfaces";
+import { Booking, DataTableProps } from "../Utils/interfaces";
 
 const DataTable: React.FC<DataTableProps> = ({
   headers,
@@ -18,7 +29,7 @@ const DataTable: React.FC<DataTableProps> = ({
   const [currentList, setCurrentList] = useState<Booking[]>([]);
   const [selectedRows, setSelectedRows] = useState<string[]>([]);
 
-  const totalCount = rows.length;
+  const [totalCount, setTotalCount] = useState<number>(rows.length);
   const pageSize = 10;
   const siblingCount = 1;
 
@@ -73,14 +84,19 @@ const DataTable: React.FC<DataTableProps> = ({
         return 0;
       })
     : filteredRows;
+
   const onPageChange = (page: number) => {
     setCurrentPage(page);
   };
 
   useEffect(() => {
-    searchQuery === ""
-      ? setDisplayList(currentList)
-      : setDisplayList(filteredRows);
+    if (searchQuery === "") {
+      setDisplayList(currentList);
+      setTotalCount(rows.length);
+    } else {
+      setDisplayList(filteredRows);
+      setTotalCount(filteredRows.length);
+    }
   }, [searchQuery, currentList, filteredRows]);
 
   return (
@@ -91,61 +107,68 @@ const DataTable: React.FC<DataTableProps> = ({
         onChange={handleSearch}
         marginBottom="1rem"
       />
-      <Box  overflowX="auto">
-      <Table variant='simple' minWidth="100%" >
-        {caption && <caption>{caption}</caption>}
-        <Thead>
-          <Tr>
-            {headers.map((header, index) => (
-              <Th
-                fontSize="xs"
-                key={index}
-                onClick={() =>
-                  handleSort(header.toLocaleLowerCase().split(" ").join(""))
-                }
-                cursor={sortable ? "pointer" : "default"}
-                _hover={sortable ? { textDecoration: "underline" } : {}}
-              >
-                {header}
-              </Th>
-            ))}
-          </Tr>
-        </Thead>
-        <Tbody>
-          {sortedRows.map((row, rowIndex) => (
-            <Tr key={rowIndex}>
-              <Td>{moment(row.timestamp).fromNow()}</Td>
-              <Td>{row.purchaseid}</Td>
-              <Td>{row.mail}</Td>
-              <Td>{row.name}</Td>
-              <Td>{row.source}</Td>
-              <Td>
-                <Tag
-                  colorScheme={
-                    row.status === "Paid"
-                      ? "green"
-                      : row.status === "Waiting"
-                      ? "yellow"
-                      : "red"
-                  }
-                  borderRadius="xl"
+      <Box overflowX="auto">
+        <Table variant="simple" minWidth="100%">
+          {caption && <caption>{caption}</caption>}
+          <Thead>
+            <Tr>
+              {headers.map((header, index) => (
+                <Th
                   fontSize="xs"
-                  px={4}
+                  key={index}
+                  onClick={() =>
+                    handleSort(header.toLocaleLowerCase().split(" ").join(""))
+                  }
+                  cursor={sortable ? "pointer" : "default"}
+                  _hover={sortable ? { textDecoration: "underline" } : {}}
                 >
-                  {row.status}
-                </Tag>
-              </Td>
-              <Td> <Button
-                  colorScheme={selectedRows.includes(row.purchaseid) ? 'green' : 'gray'}
-                  onClick={() => handleRowSelect(row.purchaseid)}
-                  minWidth={32}
-                >
-                  {selectedRows.includes(row.purchaseid) ? 'Selected' : 'Select'}
-                </Button></Td>
+                  {header}
+                </Th>
+              ))}
             </Tr>
-          ))}
-        </Tbody>
-      </Table>
+          </Thead>
+          <Tbody>
+            {sortedRows.map((row, rowIndex) => (
+              <Tr key={rowIndex}>
+                <Td>{moment(row.timestamp).fromNow()}</Td>
+                <Td>{row.purchaseid}</Td>
+                <Td>{row.mail}</Td>
+                <Td>{row.name}</Td>
+                <Td>{row.source}</Td>
+                <Td>
+                  <Tag
+                    colorScheme={
+                      row.status === "Paid"
+                        ? "green"
+                        : row.status === "Waiting"
+                        ? "yellow"
+                        : "red"
+                    }
+                    borderRadius="xl"
+                    fontSize="xs"
+                    px={4}
+                  >
+                    {row.status}
+                  </Tag>
+                </Td>
+                <Td>
+                  {" "}
+                  <Button
+                    colorScheme={
+                      selectedRows.includes(row.purchaseid) ? "green" : "gray"
+                    }
+                    onClick={() => handleRowSelect(row.purchaseid)}
+                    minWidth={32}
+                  >
+                    {selectedRows.includes(row.purchaseid)
+                      ? "Selected"
+                      : "Select"}
+                  </Button>
+                </Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
       </Box>
       <Pagination
         totalCount={totalCount}

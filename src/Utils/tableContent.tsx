@@ -61,7 +61,7 @@ export const rows: Booking[] = [
       mail: 'example7@mail.com',
       name: 'David Wilson',
       source: 'Website',
-      status: 'Paid',
+      status: 'Failed',
       select: '',
     },
     {
@@ -70,7 +70,7 @@ export const rows: Booking[] = [
       mail: 'example8@mail.com',
       name: 'Emily Davis',
       source: 'App',
-      status: 'Waiting',
+      status: 'Failed',
       select: '',
     },
     {
