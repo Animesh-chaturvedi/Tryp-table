@@ -20,6 +20,7 @@ const DataTable: React.FC<DataTableProps> = ({
   caption,
   rows,
   sortable,
+  pagination
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [displayList, setDisplayList] = useState<Booking[]>([]);
@@ -34,13 +35,17 @@ const DataTable: React.FC<DataTableProps> = ({
   const siblingCount = 1;
 
   useEffect(() => {
+    if(!pagination){
+      setCurrentList(rows);
+      return ;
+    } 
     setCurrentList(
       rows.slice(
         (currentPage - 1) * pageSize,
         (currentPage - 1) * pageSize + pageSize
       )
     );
-  }, [currentPage, rows]);
+  }, [currentPage, rows, pagination]);
 
   const handleSort = (column: string) => {
     console.log(column, "inside sort");
@@ -170,13 +175,16 @@ const DataTable: React.FC<DataTableProps> = ({
           </Tbody>
         </Table>
       </Box>
+      {
+        pagination &&
       <Pagination
-        totalCount={totalCount}
-        pageSize={pageSize}
-        siblingCount={siblingCount}
-        currentPage={currentPage}
-        onPageChange={onPageChange}
+      totalCount={totalCount}
+      pageSize={pageSize}
+      siblingCount={siblingCount}
+      currentPage={currentPage}
+      onPageChange={onPageChange}
       />
+    }
     </div>
   );
 };

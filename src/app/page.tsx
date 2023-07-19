@@ -24,7 +24,7 @@ const Home: React.FC = () => {
     <Container maxW="container.xl" mt={4}>
       <Heading as='h1' size='2xl' my="4">Tryp Table</Heading>
       <Box boxShadow="base" p={4}>
-        <DataTable headers={headers} caption="Bookings" rows={rows} sortable  />    
+        <DataTable headers={headers} caption="Bookings" rows={rows} sortable pagination  />    
       </Box>
     </Container>
   );

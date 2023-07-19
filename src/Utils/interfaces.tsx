@@ -12,4 +12,5 @@ export interface DataTableProps {
   caption?: string;
   rows: Booking[];
   sortable ?: boolean;
+  pagination?: boolean;
 }
